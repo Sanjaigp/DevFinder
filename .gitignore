@@ -1,0 +1,4 @@
+node_modules/
+*.exe
+tempCodeRunnerFile.js
+.DS_Store

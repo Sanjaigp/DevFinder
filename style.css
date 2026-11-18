@@ -1,0 +1,593 @@
+
+/* =========================
+   1. GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #ffffff;
+    --surface: #ffffff;
+    --text: #202124;
+    --muted: #70757a;
+    --border: #e5e7eb;
+    --blue: #4285f4;
+    --card-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+
+/* =========================
+   2. NAVIGATION BAR
+========================= */
+
+.navbar {
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.brand-icon {
+    background: var(--blue);
+    color: white;
+    padding: 8px;
+    border-radius: 9px;
+    font-size: 18px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.nav-link,
+.theme-button {
+    background: transparent;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.theme-button {
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+}
+
+
+/* =========================
+   3. HERO SECTION
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 85px 20px 55px;
+}
+
+.tagline {
+    display: inline-block;
+    color: var(--blue);
+    background: #eef4ff;
+    padding: 9px 17px;
+    border-radius: 25px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 55px);
+    line-height: 1.2;
+    margin-top: 25px;
+    letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+    color: var(--blue);
+}
+
+.hero-description {
+    max-width: 580px;
+    margin: 20px auto 30px;
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+
+/* =========================
+   4. SEARCH BAR
+========================= */
+
+.search-container {
+    width: min(650px, 90%);
+    height: 60px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 35px;
+    padding: 6px 8px 6px 20px;
+    position: relative;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    background: var(--surface);
+    z-index: 5;
+}
+
+.search-container:focus-within {
+    border-color: var(--blue);
+    box-shadow: 0 3px 18px rgba(66,133,244,0.18);
+}
+
+.search-icon {
+    font-size: 27px;
+    color: var(--muted);
+}
+
+.search-container input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    background: transparent;
+    color: var(--text);
+}
+
+.search-button {
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 23px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-button:hover {
+    background: #286bd1;
+}
+
+.clear-button {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    padding: 8px;
+    cursor: pointer;
+    color: var(--muted);
+}
+
+
+/* =========================
+   5. SUGGESTIONS
+========================= */
+
+.suggestions {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    display: none;
+}
+
+.suggestions.active {
+    display: block;
+}
+
+.suggestion-item {
+    padding: 13px 20px;
+    text-align: left;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.suggestion-item:hover {
+    background: #eef4ff;
+}
+
+
+/* =========================
+   6. POPULAR SEARCHES
+========================= */
+
+.popular-searches {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.quick-search {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 20px;
+    padding: 7px 13px;
+    cursor: pointer;
+}
+
+.quick-search:hover {
+    background: #eef4ff;
+    border-color: var(--blue);
+}
+
+
+/* =========================
+   7. RESULTS SECTION
+========================= */
+
+.results-section {
+    max-width: 1150px;
+    margin: 35px auto 80px;
+    padding: 0 25px;
+}
+
+.section-heading h2 {
+    font-size: 25px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.category-btn {
+    padding: 10px 18px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: white;
+}
+
+
+/* =========================
+   8. RESULT COUNT
+========================= */
+
+.results-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.show-all {
+    border: none;
+    background: transparent;
+    color: var(--blue);
+    cursor: pointer;
+}
+
+
+/* =========================
+   9. TOOL CARDS
+========================= */
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tool-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 23px;
+    background: var(--surface);
+    box-shadow: var(--card-shadow);
+    transition: 0.25s;
+}
+
+.tool-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tool-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    background: #eef4ff;
+    color: var(--blue);
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.favorite-btn {
+    background: transparent;
+    border: none;
+    font-size: 23px;
+    color: #a0a0a0;
+    cursor: pointer;
+}
+
+.favorite-btn.saved {
+    color: #e05263;
+}
+
+.tool-card h3 {
+    margin: 18px 0 9px;
+    font-size: 19px;
+}
+
+.tool-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 45px;
+}
+
+.tool-category {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 6px 11px;
+    border-radius: 15px;
+    background: #eef4ff;
+    color: #3475d1;
+    font-size: 12px;
+}
+
+.visit-btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: var(--blue);
+    color: white;
+    padding: 11px;
+    border-radius: 8px;
+    margin-top: 18px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.visit-btn:hover {
+    background: #286bd1;
+}
+
+
+/* =========================
+   10. NO RESULTS
+========================= */
+
+.no-results {
+    text-align: center;
+    padding: 55px 15px;
+}
+
+.no-results[hidden] {
+    display: none;
+}
+
+.no-results-icon {
+    font-size: 50px;
+    color: var(--muted);
+}
+
+.no-results h3 {
+    margin: 15px 0 10px;
+}
+
+.no-results p {
+    color: var(--muted);
+}
+
+.no-results button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   11. FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 2;
+}
+
+
+/* =========================
+   12. DARK MODE
+========================= */
+
+body.dark {
+    --background: #111827;
+    --surface: #1f2937;
+    --text: #f9fafb;
+    --muted: #b0bac8;
+    --border: #374151;
+    --blue: #60a5fa;
+}
+
+body.dark .tagline,
+body.dark .tool-icon,
+body.dark .tool-category,
+body.dark .suggestion-item:hover,
+body.dark .quick-search:hover {
+    background: #263d5c;
+}
+
+body.dark .tool-category {
+    color: #a9ceff;
+}
+
+body.dark .category-btn.active {
+    color: #111827;
+}
+
+body.dark .visit-btn {
+    color: #111827;
+}
+
+
+/* =========================
+   13. RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 850px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .brand {
+        font-size: 19px;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .search-container {
+        width: 95%;
+        height: 55px;
+    }
+
+    .search-button {
+        padding: 11px 13px;
+    }
+
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .results-section {
+        padding: 0 16px;
+    }
+
+    .nav-actions {
+        gap: 10px;
+    }
+}
+.account-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.account-area a,
+.account-area button {
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    background: var(--blue);
+    color: white;
+}
+
+#userName {
+    color: inherit;
+    font-weight: 600;
+}
+
+body.dark .account-area a,
+body.dark .account-area button {
+    color: #111827;
+}
+
+#userName {
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 550px) {
+    .account-area {
+        gap: 8px;
+    }
+
+    .account-area a,
+    .account-area button {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    #userName {
+        max-width: 90px;
+    }
+}

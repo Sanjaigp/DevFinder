@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DevFinder - Developer Tools Search</title>
+
+    <meta name="description"
+          content="Discover and search useful tools for developers, programmers and students.">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="#" class="brand">
+            <span class="brand-icon">&lt;/&gt;</span>
+            DevFinder
+        </a>
+
+        <div class="nav-actions">
+            <button id="favoritesNav" class="nav-link">
+                ♥ Favorites
+            </button>
+
+            <button id="themeToggle" class="theme-button"
+                    aria-label="Toggle dark mode">
+                ☾
+            </button>
+            <div class="account-area">
+                <a href="auth.html" id="loginLink">Login / Sign Up</a>
+                <span id="userName" hidden></span>
+                <button id="logoutBtn" hidden>Logout</button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Main Search Section -->
+    <main>
+
+        <section class="hero">
+
+            <div class="tagline">
+                ✦ YOUR DEVELOPER TOOLBOX
+            </div>
+
+            <h1>
+                Find the right tools.<br>
+                <span>Build something amazing.</span>
+            </h1>
+
+            <p class="hero-description">
+                Discover useful websites and tools for coding,
+                designing, debugging and building projects.
+            </p>
+
+
+            <!-- Search Box -->
+            <div class="search-container">
+
+                <span class="search-icon">⌕</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search developer tools..."
+                    autocomplete="off"
+                    aria-label="Search developer tools"
+                >
+
+                <button id="clearSearch" class="clear-button"
+                        aria-label="Clear search">
+                    ×
+                </button>
+
+                <button id="searchButton" class="search-button">
+                    Search
+                </button>
+
+                <!-- Search Suggestions -->
+                <div id="suggestions" class="suggestions"></div>
+
+            </div>
+
+
+            <div class="popular-searches">
+                <span>Popular:</span>
+                <button class="quick-search" data-query="AI">AI Tools</button>
+                <button class="quick-search" data-query="CSS">CSS</button>
+                <button class="quick-search" data-query="API">API</button>
+                <button class="quick-search" data-query="Code editor">
+                    Code Editors
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- Category Section -->
+        <section class="results-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Explore Developer Tools</h2>
+                    <p>Everything you need in one place.</p>
+                </div>
+            </div>
+
+
+            <div class="categories" id="categories">
+
+                <button class="category-btn active"
+                        data-category="All">
+                    All Tools
+                </button>
+
+                <button class="category-btn"
+                        data-category="Code Editor">
+                    Code Editors
+                </button>
+
+                <button class="category-btn"
+                        data-category="AI Tools">
+                    AI Tools
+                </button>
+
+                <button class="category-btn"
+                        data-category="Design">
+                    Design
+                </button>
+
+                <button class="category-btn"
+                        data-category="Testing">
+                    Testing
+                </button>
+
+                <button class="category-btn"
+                        data-category="Learning">
+                    Learning
+                </button>
+
+                <button class="category-btn"
+                        data-category="Development">
+                    Development
+                </button>
+
+            </div>
+
+
+            <!-- Results Information -->
+            <div class="results-info">
+                <p id="resultCount">Showing all tools</p>
+
+                <button id="showAll" class="show-all">
+                    Show all tools
+                </button>
+            </div>
+
+
+            <!-- Tool Cards -->
+            <div class="tools-grid" id="toolsGrid"></div>
+
+
+            <!-- No Results -->
+            <div id="noResults" class="no-results" hidden>
+                <div class="no-results-icon">⌕</div>
+                <h3>No tools found</h3>
+                <p>Try searching with another keyword.</p>
+                <button id="resetSearch">Clear search</button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ♥ by a developer, for developers.</p>
+        <p>© 2026 DevFinder | Discover. Explore. Build.</p>
+    </footer>
+
+
+    <script type="module" src="auth-state.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>

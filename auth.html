@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>DevFinder | Login</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+
+<div class="auth-container">
+
+    <a href="index.html" class="logo">DevFinder</a>
+
+    <h1 id="formTitle">Welcome Back!</h1>
+    <p class="subtitle" id="formSubtitle">
+        Login to continue exploring developer tools.
+    </p>
+
+    <div class="tabs">
+        <button id="loginTab" class="active">
+            Login
+        </button>
+
+        <button id="signupTab">
+            Sign Up
+        </button>
+    </div>
+
+    <form id="authForm">
+
+        <div id="nameGroup" class="hidden">
+            <label for="name">Full Name</label>
+            <input
+                type="text"
+                id="name"
+                placeholder="Enter your name"
+            >
+        </div>
+
+        <label for="email">Email Address</label>
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+        >
+
+        <label for="password">Password</label>
+        <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            minlength="6"
+            required
+        >
+
+        <div id="confirmGroup" class="hidden">
+            <label for="confirmPassword">
+                Confirm Password
+            </label>
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm your password"
+            >
+        </div>
+
+        <button type="submit" id="submitBtn">
+            Login
+        </button>
+
+        <p id="message"></p>
+
+    </form>
+
+    <p class="bottom-text">
+        <a href="index.html">← Back to DevFinder</a>
+    </p>
+
+</div>
+
+<script type="module" src="auth.js"></script>
+
+</body>
+</html>
