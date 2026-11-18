@@ -4,15 +4,14 @@ import { initializeApp } from
 import { getAuth } from
   "https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js";
 
-// PASTE YOUR REAL CONFIG HERE
-// Firebase Console -> Project settings -> Your apps -> Web app
-  const firebaseConfig = {
-  apiKey: "AIza...",
-  authDomain: "your-project.firebaseapp.com",
-  projectId: "your-project",
-  storageBucket: "your-project.firebasestorage.app",
-  messagingSenderId: "123456789",
-  appId: "1:123456789:web:abc123"
+const firebaseConfig = {
+  apiKey: "AIzaSyCCxCA5HI7xUvAGI7MGdgmC7h-Zja0pNEo",
+  authDomain: "devfinder-gps.firebaseapp.com",
+  projectId: "devfinder-gps",
+  storageBucket: "devfinder-gps.firebasestorage.app",
+  messagingSenderId: "566715438791",
+  appId: "1:566715438791:web:d8950f7d3f45afe0d150e2",
+  measurementId: "G-NSKYBD566Q"
 };
 
 export const isFirebaseConfigured =
@@ -21,4 +20,3 @@ export const isFirebaseConfigured =
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-
